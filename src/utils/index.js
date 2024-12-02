@@ -1,3 +1,4 @@
 import Button from "./Button";
+import AnimateTitle from "./AnimateTitle";
 
-export { Button };
+export { Button, AnimateTitle };
