@@ -3,9 +3,9 @@ import { Button } from "../utils";
 import { TiLocationArrow } from "react-icons/ti";
 import { useWindowScroll } from "react-use";
 import gsap from "gsap";
-const navItems = ["Omnic", "Classic", "Prologue", "About", "Contact"];
+const navItems = ["Omnic", "Esports", "Prologue", "About", "Contact"];
 
-export const Navbar = () => {
+const Navbar = () => {
 	const navRef = useRef(null);
 	const audioElementRef = useRef(null);
 
@@ -103,3 +103,5 @@ export const Navbar = () => {
 		</div>
 	);
 };
+
+export default Navbar;
