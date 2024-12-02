@@ -1,7 +1,7 @@
+import { AnimateTitle } from "../utils";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { AnimateTitle } from "../utils";
 gsap.registerPlugin(ScrollTrigger);
 const About = () => {
 	useGSAP(() => {
@@ -10,7 +10,7 @@ const About = () => {
 				trigger: "#clip",
 				start: "center center",
 				end: "+=800 center",
-				scrub: 0.5,
+				scrub: 0.5, //how moving through the animation on scroll
 				pin: true,
 				pinSpacing: true,
 			},
@@ -26,15 +26,18 @@ const About = () => {
 			<div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
 				<h2 className="font-general text-sm uppercase md:text-[10px]">
 					{" "}
-					Welcome to Holobiont
+					Welcome to Overwatch MetaVerse
 				</h2>
 				<AnimateTitle
 					title="Disc<b>o</b>ver the world's
 			<br/> l<b>a</b>rgest shared adventure"
-				containerClass="mt-5 !text-black text-center"/>
+					containerClass="mt-5 !text-black text-center"
+				/>
 				<div className="about-subtext">
 					<p>The Game of Games begins-your life, now an epic MMORBG</p>
-					<p>Zentry unites every player from countless games and platforms</p>
+					<p>
+						Overwatch unites every player from countless games and platforms
+					</p>
 				</div>
 			</div>
 			<div className="h-dvh w-screen" id="clip">

@@ -13,7 +13,7 @@ const AnimateTitle = ({ title, containerClass }) => {
 					trigger: containerRef.current,
 					start: "100 bottom",
 					end: "center bottom",
-					toggleActions: "play none none reverse",
+					toggleActions: "play none none reverse", //for animation to play once while scrolling forward and only resets after reverse
 				},
 			});
 			titleAnimation.to(
@@ -22,14 +22,12 @@ const AnimateTitle = ({ title, containerClass }) => {
 					opacity: 1,
 					transform: "translate3d(0,0,0) rotateY(0deg) rotateX(0deg)",
 					ease: "power2.inOut",
-					stagger: 0.02,
+					stagger: 0.05,
 				},
 				0
 			);
 		}, containerRef);
-		return () => {
-			context.revert(); //clean up on unmount
-		};
+		return () => context.revert(); //clean up on unmount
 	}, []);
 	return (
 		<div ref={containerRef} className={`animated-title ${containerClass}`}>
@@ -40,7 +38,7 @@ const AnimateTitle = ({ title, containerClass }) => {
 					{line.split(" ").map((word, i) => (
 						<span
 							key={i}
-							className="animate-word"
+							className="animated-word"
 							dangerouslySetInnerHTML={{ __html: word }}
 						/>
 					))}
