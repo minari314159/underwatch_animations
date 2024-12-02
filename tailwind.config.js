@@ -14,7 +14,7 @@ export default {
 				primary: "#d1f7ff", //light aqua
 				secondary: "#05d9e8", //aqua
 				tertiary: "#005678", //slate blue
-				neon: "#ff2a6d", //neon salmon pink
+				neon: "#d9682b", //neon salmon pink
 				dark: "#01012b", //dark blue
 				violet: {
 					300: "#5724FF",

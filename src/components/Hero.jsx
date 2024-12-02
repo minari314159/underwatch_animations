@@ -111,7 +111,7 @@ const Hero = () => {
 						src={getVideoSrc(
 							currentIndex === totalVideos - 1 ? 1 : currentIndex
 						)}
-						autoPlay
+						// autoPlay
 						loop
 						muted
 						className="absolute left-0 top-0 size-full object-cover object-center"
@@ -123,7 +123,7 @@ const Hero = () => {
 					<div className="absolute left-0 top-0 z-40 size-full ">
 						<div className="mt-24 px-5 sm:px-10">
 							<h1 className="special-font hero-heading text-primary">
-								Redefi<b>n</b>e
+								Redefi<b>n</b>ed
 							</h1>
 							<p className="mb-5 max-w-64 font-robert-regular text-violet-100">
 								Enter the Metagame Layer <br /> A future worth fighting for
