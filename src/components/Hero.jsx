@@ -70,7 +70,7 @@ const Hero = () => {
 	});
 	return (
 		<section className="relative h-dvh w-screen overflow-x-hidden">
-			{isLoading && (
+			{isLoading ?? (
 				<div className="flex-center aboslute z-[100] h-dvh w-screen overflow-hidden bg-primary">
 					<div className="three-body">
 						<div className="three-body__dot"></div>
@@ -139,8 +139,11 @@ const Hero = () => {
 					</div>
 				</div>
 			</div>
-			<h1 className="special-font hero-heading absolute bottom-5 right-5  text-black">
-				R<b>h</b>izosp<b>h</b>ere
+			<h1
+				className={`special-font hero-heading absolute bottom-5 right-5  text-black ${
+					isLoading ? "hidden" : " "
+				}`}>
+				B<b>a</b>ttlesp<b>h</b>ere
 			</h1>
 		</section>
 	);
