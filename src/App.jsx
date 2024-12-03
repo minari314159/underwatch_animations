@@ -1,4 +1,12 @@
-import { About, Features, Hero, Navbar, Story } from "./components/index";
+import {
+	About,
+	Contact,
+	Features,
+	Footer,
+	Hero,
+	Navbar,
+	Season,
+} from "./components/index";
 const App = () => {
 	return (
 		<main className="relative min-h-screen w-screen overflow-x-hidden ">
@@ -6,7 +14,9 @@ const App = () => {
 			<Hero />
 			<About />
 			<Features />
-			<Story />
+			<Season />
+			<Contact />
+			<Footer />
 		</main>
 	);
 };

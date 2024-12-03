@@ -3,7 +3,7 @@ import { BentoCard, Tilt } from "../utils/index";
 
 const Features = () => {
 	return (
-		<section className="bg-black pb-52">
+		<section id="esports" className="bg-black pb-52">
 			<div className="container mx-auto md:px-10">
 				<div className="px-5 py-32">
 					<p className="font-circular-web text-lg text-violet-50">
@@ -55,11 +55,11 @@ const Features = () => {
 							src="videos/feature-4.mp4"
 							title={
 								<>
-									Sp<b>e</b>llbi<b>n</b>der
+									St<b>a</b>nd with your h<b>e</b>roes
 								</>
 							}
 							isComingSoon
-							description="Haunt your foes with the power of Mythic Spellbinder Widowmaker, a master of witchcraft with enchanting effects to die for. "
+							description="More extraordinary heroes will join the current roster. Whether you like to lead the charge, ambush enemies, or aid your allies, there’s a new hero for you."
 						/>
 					</Tilt>
 					<div className="bento-tilt_2 ">

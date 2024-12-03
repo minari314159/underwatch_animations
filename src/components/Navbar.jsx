@@ -3,7 +3,7 @@ import { Button } from "../utils";
 import { TiLocationArrow } from "react-icons/ti";
 import { useWindowScroll } from "react-use";
 import gsap from "gsap";
-const navItems = ["Omnic", "Esports", "Prologue", "About", "Contact"];
+const navItems = ["Esports", "Season", "About", "Contact"];
 
 const Navbar = () => {
 	const navRef = useRef(null);
