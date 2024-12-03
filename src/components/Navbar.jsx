@@ -8,6 +8,7 @@ const navItems = ["Esports", "Season", "About", "Contact"];
 
 const Navbar = () => {
 	const navRef = useRef(null);
+	const menuRef = useRef(null);
 	const audioElementRef = useRef(null);
 	const [isOpen, setIsOpen] = useState(false);
 	const [isPlaying, setIsPlaying] = useState(false);
@@ -35,15 +36,20 @@ const Navbar = () => {
 		if (currentScollY === 0) {
 			setIsNavVisible(true);
 			navRef.current.classList.remove("floating-nav"); //remove specific class based on position of scroll
+			menuRef.current.classList.remove("floating-nav");
 		} else if (currentScollY > lastScrollY) {
+			isOpen && setIsOpen(false);
 			setIsNavVisible(false);
 			navRef.current.classList.add("floating-nav");
+			menuRef.current.classList.add("floating-nav");
 		} else if (currentScollY < lastScrollY) {
+			isOpen && setIsOpen(false);
 			setIsNavVisible(true);
 			navRef.current.classList.add("floating-nav");
+			menuRef.current.classList.add("floating-nav");
 		}
 		setLastScrollY(currentScollY);
-	}, [currentScollY, lastScrollY]);
+	}, [currentScollY, lastScrollY, isOpen]);
 
 	useEffect(() => {
 		gsap.to(navRef.current, {
@@ -51,7 +57,12 @@ const Navbar = () => {
 			opacity: isNavVisible ? 1 : 0,
 			duration: "0.2s",
 		});
-	}, [isNavVisible]);
+		gsap.to(menuRef.current, {
+			y: isOpen ? 0 : -200,
+			opacity: isOpen ? 1 : 0,
+			duration: "0.3s",
+		});
+	}, [isNavVisible, isOpen]);
 
 	return (
 		<div
@@ -63,12 +74,19 @@ const Navbar = () => {
 						<img src="/img/logo.png" alt="logo" className="w-10" />
 					</div>
 					<div className="flex h-full items-center">
-						<div className="hidden md:block">
+						<div
+							ref={menuRef}
+							className={`md:block ${
+								isOpen
+									? "fixed flex flex-col text-right  gap-2 top-[5rem] right-[0.1rem] border-none p-3  floating-nav transition-all duration-700"
+									: "hidden"
+							}`}>
 							{navItems.map((item) => (
 								<a
 									key={item}
 									href={`#${item.toLocaleLowerCase()}`}
-									className="nav-hover-btn">
+									className="nav-hover-btn"
+									onClick={() => setIsOpen(false)}>
 									{item}
 								</a>
 							))}
