@@ -15,6 +15,7 @@ const Navbar = () => {
 	const [isIndicatorActive, setIsInidicatorActive] = useState(false);
 	const [lastScrollY, setLastScrollY] = useState(0);
 	const [isNavVisible, setIsNavVisible] = useState(true);
+	const [width, setWidth] = useState(window.innerWidth);
 
 	const { y: currentScollY } = useWindowScroll();
 
@@ -41,15 +42,16 @@ const Navbar = () => {
 			isOpen && setIsOpen(false);
 			setIsNavVisible(false);
 			navRef.current.classList.add("floating-nav");
-			menuRef.current.classList.add("floating-nav");
+			
 		} else if (currentScollY < lastScrollY) {
 			isOpen && setIsOpen(false);
 			setIsNavVisible(true);
 			navRef.current.classList.add("floating-nav");
 			menuRef.current.classList.add("floating-nav");
+			
 		}
 		setLastScrollY(currentScollY);
-	}, [currentScollY, lastScrollY, isOpen]);
+	}, [currentScollY, lastScrollY, isOpen, width]);
 
 	useEffect(() => {
 		gsap.to(navRef.current, {
@@ -57,12 +59,19 @@ const Navbar = () => {
 			opacity: isNavVisible ? 1 : 0,
 			duration: "0.2s",
 		});
-		gsap.to(menuRef.current, {
-			y: isOpen ? 0 : -200,
-			opacity: isOpen ? 1 : 0,
-			duration: "0.3s",
-		});
-	}, [isNavVisible, isOpen]);
+		const handleResize = () => setWidth(window.innerWidth);
+		window.addEventListener("resize", handleResize);
+		if (width < 768) {
+			gsap.to(menuRef.current, {
+				y: isOpen ? 0 : -200,
+				opacity: isOpen ? 1 : 0,
+				duration: "0.3s",
+			});
+		} else {
+			setIsOpen(false);
+		}
+		return () => window.removeEventListener("resize", handleResize);
+	}, [currentScollY, lastScrollY, isNavVisible, isOpen, width]);
 
 	return (
 		<div
@@ -76,10 +85,10 @@ const Navbar = () => {
 					<div className="flex h-full items-center">
 						<div
 							ref={menuRef}
-							className={`md:block ${
+							className={` ${
 								isOpen
 									? "fixed flex flex-col text-right  gap-2 top-[5rem] right-[0.1rem] border-none p-3  floating-nav transition-all duration-700"
-									: "hidden"
+									: "hidden md:block border-none"
 							}`}>
 							{navItems.map((item) => (
 								<a

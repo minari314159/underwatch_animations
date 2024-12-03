@@ -10,10 +10,10 @@ const links = [
 
 const Footer = () => {
 	return (
-		<footer className="w-screen bg-neon py-4 text-black">
+		<footer className="w-screen bg-[#1e2130] py-8 text-violet-50">
 			<div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 md:flex-row">
 				<p className="text-center text-sm md:text-left">
-					&copy; Blizzard 2024. All rights reserved
+					&copy;2024 Blizzard Entertainment, Inc.
 				</p>
 				<div className="flex justify0center gap-4 md:justify-start">
 					{links.map((link) => (
@@ -22,7 +22,7 @@ const Footer = () => {
 							href={link.href}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-black transition-colors duration-500 ease-in-out hover:text-white">
+							className="text-violet-50 transition-colors duration-500 ease-in-out hover:text-neon">
 							{link.icon}
 						</a>
 					))}

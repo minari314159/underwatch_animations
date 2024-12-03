@@ -19,13 +19,13 @@ const BentoCard = ({ src, title, description, isComingSoon = false }) => {
 	const handleMouseEnter = () => setHoverOpacity(1);
 	const handleMouseLeave = () => setHoverOpacity(0);
 	return (
-		<div className="relative size-full">
+		<div className="relative size-full ">
 			<video
 				src={src}
 				loop
 				muted
 				autoPlay
-				className="absolute left-0 top-0 size-full object-cover object-center"
+				className="absolute left-0 top-0 size-full object-cover object-center "
 			/>
 			<div className="relative z-10 flex size-full flex-col justify-between p-5 text-violet-50">
 				<div>
