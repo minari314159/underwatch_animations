@@ -1,5 +1,5 @@
 import { TiLocationArrow } from "react-icons/ti";
-import BentoCard from "../utils/BentoCard";
+import {BentoCard, Tilt} from "../utils/index";
 
 const Features = () => {
 	return (
@@ -15,7 +15,7 @@ const Features = () => {
 						interconnected overlay experience transforming your world.
 					</p>
 				</div>
-				<div className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
+				<Tilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]">
 					<BentoCard
 						src="videos/feature-1.mp4"
 						title={
@@ -25,9 +25,9 @@ const Features = () => {
 						}
 						description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into an adventure"
 					/>
-				</div>
+				</Tilt>
 				<div className="grid h-[135vh] grid-col-2 grid-rows-3 gap-7">
-					<div className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
+					<Tilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
 						<BentoCard
 							src="videos/feature-2.mp4"
 							title={
@@ -37,8 +37,8 @@ const Features = () => {
 							}
 							description="Watch our video update and head to our blog to learn more about what is next for Overwatch Esports in 2024"
 						/>
-					</div>
-					<div className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
+					</Tilt>
+					<Tilt className="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
 						<BentoCard
 							src="videos/feature-3.mp4"
 							title={
@@ -48,8 +48,8 @@ const Features = () => {
 							}
 							description="A social hub, adding new dimensions of play to social interactions for Web3 communities"
 						/>
-					</div>
-					<div className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
+					</Tilt>
+					<Tilt className="bento-tilt_1 me-14 md:col-span-1 md:me-0">
 						<BentoCard
 							src="videos/feature-4.mp4"
 							title={
@@ -59,7 +59,7 @@ const Features = () => {
 							}
 							description="Haunt your foes with the power of Mythic Spellbinder Widowmaker, a master of witchcraft with enchanting effects to die for. "
 						/>
-					</div>
+					</Tilt>
 					<div className="bento-tilt_2 ">
 						<div className="flex size-full flex-col justify-between bg-violet-300 p-5">
 							<h1 className="bento-title special-font max-w-64">
@@ -68,7 +68,7 @@ const Features = () => {
 							<TiLocationArrow className="m-5 scale-[5] self-end" />
 						</div>
 					</div>
-					<div className="bento-tilt_2 ">
+					<Tilt className="bento-tilt_2 ">
 						<video
 							src="videos/feature-5.mp4"
 							loop
@@ -76,7 +76,7 @@ const Features = () => {
 							autoPlay
 							className="size-full object-cover object-center"
 						/>
-					</div>
+					</Tilt>
 				</div>
 			</div>
 		</section>
