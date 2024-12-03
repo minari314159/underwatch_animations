@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 
 /* eslint-disable react/prop-types */
-const Tilt = ({ children, className = " " }) => {
+const Tilt = ({ children, className = " ", tiltStrength = 5 }) => {
 	const [transformStyle, setTranformStyle] = useState("");
 	const itemRef = useRef();
 	const handleMouseMove = (e) => {
@@ -10,12 +10,14 @@ const Tilt = ({ children, className = " " }) => {
 			itemRef.current.getBoundingClientRect();
 		const relativeX = (e.clientX - left) / width;
 		const relativeY = (e.clientY - top) / height;
-		const tiltX = (relativeY - 0.5) * 10;
-		const tiltY = (relativeX - 0.5) * 10;
+		const tiltX = (relativeY - 0.5) * tiltStrength;
+		const tiltY = (relativeX - 0.5) * tiltStrength;
 		const newTransform = `perspective(700px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(0.98,0.98,0.98)`;
 		setTranformStyle(newTransform);
 	};
-	const handleMouseLeave = () => {};
+	const handleMouseLeave = () => {
+		setTranformStyle("");
+	};
 	return (
 		<div
 			className={className}

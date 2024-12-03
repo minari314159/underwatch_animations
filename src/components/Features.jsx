@@ -1,5 +1,5 @@
 import { TiLocationArrow } from "react-icons/ti";
-import {BentoCard, Tilt} from "../utils/index";
+import { BentoCard, Tilt } from "../utils/index";
 
 const Features = () => {
 	return (
@@ -46,6 +46,7 @@ const Features = () => {
 									N<b>e</b>xus
 								</>
 							}
+							isComingSoon
 							description="A social hub, adding new dimensions of play to social interactions for Web3 communities"
 						/>
 					</Tilt>
@@ -57,6 +58,7 @@ const Features = () => {
 									Sp<b>e</b>llbi<b>n</b>der
 								</>
 							}
+							isComingSoon
 							description="Haunt your foes with the power of Mythic Spellbinder Widowmaker, a master of witchcraft with enchanting effects to die for. "
 						/>
 					</Tilt>
