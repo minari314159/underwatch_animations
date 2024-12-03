@@ -8,7 +8,11 @@
 body {
 	width: 100dvw;
 	overflow-x: hidden;
-	background-color: #e8dff0;
+	background: linear-gradient(
+		68deg,
+		rgba(220, 222, 229, 1) 0%,
+		rgba(154, 169, 201, 1) 85%
+	);
 	font-family: "General Sans", sans-serif;
 }
 

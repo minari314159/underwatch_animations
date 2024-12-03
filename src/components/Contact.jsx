@@ -20,9 +20,9 @@ const Contact = () => {
 						src="img/contact-2.webp"
 					/>
 				</div>
-				<div className="absolute left-20 -top-40  w-60  sm:top-1/2 md:left-auto md:right-10 lg:top-20 lg:w-80">
+				<div className="absolute left-20 -top-40  w-60   sm:top-10 md:left-auto md:right-10 md:top-20 lg:top-20 lg:w-80 z-0">
 					<ImageClipBox
-						clipClass="absolute md:scale-125"
+						clipClass="absolute md:scale-125 "
 						src="img/swordman-partial.webp"
 					/>
 					<ImageClipBox
@@ -30,7 +30,7 @@ const Contact = () => {
 						src="img/swordman.webp"
 					/>
 				</div>
-				<div className="flex flex-col items-center text-center">
+				<div className="relative z-5 flex flex-col items-center text-center">
 					<p className="font-general text-[10px] uppercase"> Join Underwatch</p>
 					<p className="special-font mt-10 w-full font-zentry text-5xl leading-0.9 md:text-[6rem]">
 						Let&apos;s B<b>u</b>ilt the <br /> New <b>e</b>ra of <br />G<b>a</b>

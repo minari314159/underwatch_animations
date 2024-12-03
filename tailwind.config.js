@@ -11,7 +11,7 @@ export default {
 				"robert-regular": ["robert-regular", "sans-serif"],
 			},
 			colors: {
-				primary: "#d1f7ff", //light aqua
+				primary: "#9aa9c9", //light aqua
 				secondary: "#05d9e8", //aqua
 				tertiary: "#005678", //slate blue
 				neon: "#d9682b", //neon salmon pink

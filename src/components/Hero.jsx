@@ -71,7 +71,7 @@ const Hero = () => {
 	return (
 		<section className="relative h-dvh w-screen overflow-x-hidden">
 			{isLoading && (
-				<div className="flex-center aboslute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
+				<div className="flex-center aboslute z-[100] h-dvh w-screen overflow-hidden bg-primary">
 					<div className="three-body">
 						<div className="three-body__dot"></div>
 						<div className="three-body__dot"></div>
@@ -81,7 +81,7 @@ const Hero = () => {
 			)}
 			<div
 				id="video-frame"
-				className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-tertiary/50">
+				className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-primary">
 				<div>
 					<div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
 						<div
@@ -117,16 +117,16 @@ const Hero = () => {
 						className="absolute left-0 top-0 size-full object-cover object-center"
 						onLoadedData={handleVideoLoad}
 					/>
-					<h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-primary">
+					<h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-violet-50">
 						B<b>a</b>ttlesp<b>h</b>ere
 					</h1>
 					<div className="absolute left-0 top-0 z-40 size-full ">
 						<div className="mt-24 px-5 sm:px-10">
-							<h1 className="special-font hero-heading text-primary">
+							<h1 className="special-font hero-heading text-violet-50">
 								Redefi<b>n</b>ed
 							</h1>
 							<p className="mb-5 max-w-64 font-robert-regular text-violet-100">
-								Enter the Metagame Layer <br /> A future worth fighting for
+								Enter the Metagame Layer... <br /> A future worth fighting for!
 							</p>
 							<Button
 								id="watch-trailer"

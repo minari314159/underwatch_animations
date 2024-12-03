@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { Button } from "../utils";
-import { TiLocationArrow } from "react-icons/ti";
+import { CgMenuRight } from "react-icons/cg";
+import { IoCloseOutline } from "react-icons/io5";
+import { AiOutlineSound } from "react-icons/ai";
 import { useWindowScroll } from "react-use";
 import gsap from "gsap";
 const navItems = ["Esports", "Season", "About", "Contact"];
@@ -8,7 +9,7 @@ const navItems = ["Esports", "Season", "About", "Contact"];
 const Navbar = () => {
 	const navRef = useRef(null);
 	const audioElementRef = useRef(null);
-
+	const [isOpen, setIsOpen] = useState(false);
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [isIndicatorActive, setIsInidicatorActive] = useState(false);
 	const [lastScrollY, setLastScrollY] = useState(0);
@@ -60,12 +61,6 @@ const Navbar = () => {
 				<nav className="flex  size-full items-center justify-between p-4">
 					<div className="flex items-center gap-7">
 						<img src="/img/logo.png" alt="logo" className="w-10" />
-						<Button
-							id="product-button"
-							title="Products"
-							rightIcon={<TiLocationArrow />}
-							containerClass="!bg-violet-50 md:flex hidden items-center justify-center gap-1"
-						/>
 					</div>
 					<div className="flex h-full items-center">
 						<div className="hidden md:block">
@@ -78,25 +73,42 @@ const Navbar = () => {
 								</a>
 							))}
 						</div>
-						<button
-							onClick={toggleAudio}
-							className="ml-10 flex items-center space-x-0.5">
-							<audio
-								ref={audioElementRef}
-								className="hidden"
-								src="/audio/loop.mp3"
-								loop
-							/>
-							{[1, 2, 3, 4].map((bar) => (
-								<div
-									key={bar}
-									className={`indicator-line ${
-										isIndicatorActive ? "active" : " "
-									}`}
-									style={{ animationDelay: `${bar * 0.1}s` }}
+						<div className="flex justify-center items-center gap-3">
+							<button
+								onClick={toggleAudio}
+								className={`md:ml-10 flex items-end justify-center space-x-[0.2rem]  size-[2rem] ${
+									isPlaying ? "md:items-center items-end" : "items-center"
+								}`}>
+								<audio
+									ref={audioElementRef}
+									className="hidden"
+									src="/audio/loop.mp3"
+									loop
 								/>
-							))}
-						</button>
+								{isPlaying ? (
+									[1, 2, 3, 4].map((bar) => (
+										<div
+											key={bar}
+											className={`indicator-line ${
+												isIndicatorActive ? "active" : " "
+											}`}
+											style={{ animationDelay: `${bar * 0.1}s` }}
+										/>
+									))
+								) : (
+									<AiOutlineSound className="text-white size-[1.5rem]" />
+								)}
+							</button>
+							<button
+								onClick={() => setIsOpen((prev) => !prev)}
+								className="md:hidden z-2   flex justify-center items-center  size-[2.2rem]">
+								{isOpen ? (
+									<IoCloseOutline className="text-white size-[1.5rem]" />
+								) : (
+									<CgMenuRight className="text-white size-[1.5rem]" />
+								)}
+							</button>
+						</div>
 					</div>
 				</nav>
 			</header>
