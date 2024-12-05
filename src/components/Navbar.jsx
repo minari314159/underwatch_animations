@@ -42,13 +42,11 @@ const Navbar = () => {
 			isOpen && setIsOpen(false);
 			setIsNavVisible(false);
 			navRef.current.classList.add("floating-nav");
-			
 		} else if (currentScollY < lastScrollY) {
 			isOpen && setIsOpen(false);
 			setIsNavVisible(true);
 			navRef.current.classList.add("floating-nav");
 			menuRef.current.classList.add("floating-nav");
-			
 		}
 		setLastScrollY(currentScollY);
 	}, [currentScollY, lastScrollY, isOpen, width]);
@@ -61,7 +59,7 @@ const Navbar = () => {
 		});
 		const handleResize = () => setWidth(window.innerWidth);
 		window.addEventListener("resize", handleResize);
-		if (width < 768) {
+		if (width <= 1022) {
 			gsap.to(menuRef.current, {
 				y: isOpen ? 0 : -200,
 				opacity: isOpen ? 1 : 0,
@@ -69,6 +67,11 @@ const Navbar = () => {
 			});
 		} else {
 			setIsOpen(false);
+			gsap.to(menuRef.current, {
+				x: 0,
+				opacity: 1,
+				duration: "0.3s",
+			});
 		}
 		return () => window.removeEventListener("resize", handleResize);
 	}, [currentScollY, lastScrollY, isNavVisible, isOpen, width]);
